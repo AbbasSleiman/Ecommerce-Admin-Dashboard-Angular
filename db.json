@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "name": "Laptop", "price": 1200 },
+    { "id": 2, "name": "Phone", "price": 800 }
+  ],
+  "orders": [
+    { "id": 1, "product": "Laptop", "quantity": 2 },
+    { "id": 2, "product": "Phone", "quantity": 1 }
+  ]
+}
