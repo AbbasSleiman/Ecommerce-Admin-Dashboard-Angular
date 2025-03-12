@@ -6,5 +6,19 @@
   "orders": [
     { "id": 1, "product": "Laptop", "quantity": 2 },
     { "id": 2, "product": "Phone", "quantity": 1 }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Sirius",
+      "password": "Password1234",
+      "role": "admin"
+    },
+    {
+      "id": 1,
+      "username": "Guest",
+      "password": "Password1234",
+      "role": "guest"
+    }
   ]
 }
