@@ -6,10 +6,16 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductComponent } from './components/product/product.component';
 import { OrderComponent } from './components/order/order.component';
 import { LandingComponent } from './landing/landing.component';
+import { authenticateGuard } from './guards/authenticate.guard';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent, title: 'Landing Page' },
-  { path: 'dashboard', component: DashboardComponent, title: 'Dashboard' },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    title: 'Dashboard',
+    
+  },
   {
     path: 'login',
     component: LoginComponent,

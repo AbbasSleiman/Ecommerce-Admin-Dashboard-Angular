@@ -8,6 +8,8 @@ import {
   IonToolbar,
 } from '@ionic/angular/standalone';
 import { AuthenticateService } from '../guards/authenticate.service';
+import { User } from '../models/User';
+
 
 @Component({
   selector: 'app-landing',
@@ -23,16 +25,19 @@ import { AuthenticateService } from '../guards/authenticate.service';
   styleUrl: './landing.component.css',
 })
 export class LandingComponent {
+  user: User | undefined;
+  isAdmin: boolean | undefined;
+
   constructor(private authService: AuthenticateService) {}
 
-  ngOnInit() {
-    this.authService.isAdmin(1).subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+  ngOnInit(): void {
+    this.getUserData(1);
+  }
+
+  getUserData(id: number) {
+    this.authService.isUserAdmin(id).subscribe(response => {
+      this.isAdmin = response;
+      console.log(this.isAdmin);
+    })
   }
 }
