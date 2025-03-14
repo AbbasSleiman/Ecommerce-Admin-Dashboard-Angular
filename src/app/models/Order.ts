@@ -1,7 +1,9 @@
 interface Order {
   id: number;
-  product_name: string;
+  userId: number;
+  product: string;
   quantity: number;
+  status: string;
 }
 
 export type { Order as Order };

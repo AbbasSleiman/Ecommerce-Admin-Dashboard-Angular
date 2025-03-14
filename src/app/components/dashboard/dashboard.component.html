@@ -1,3 +1,100 @@
 <app-navbar-dashboard />
-<p>Dashboard</p>
-<ion-button color="danger" (click)="logout()">Logout</ion-button>
+
+<ion-content class="w-full overflow-auto">
+  <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
+    <div class="text-center">
+      <h1>Welcome</h1>
+      <p>Admin Dashboard</p>
+    </div>
+    <!-- Cards Container -->
+    <div class="flex flex-col items-center gap-4">
+      <h2>Stats Cards</h2>
+      <div
+        class="flex flex-col gap-12 items-center- justify-center md:flex-row">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Orders</ion-card-title>
+            <ion-card-subtitle>Orders Number</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> {{ ordersNumber }} </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Products</ion-card-title>
+            <ion-card-subtitle>Products Number</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> {{ productsNumber }} </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Users</ion-card-title>
+            <ion-card-subtitle>Users Number</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> {{ usersNumber }} </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <!-- Tables Container -->
+    <div class="flex flex-col items-center w-full gap-12">
+      <!-- Orders Container -->
+      <div class="table-container">
+        <h3>Latest 5 Orders</h3>
+
+        <table class="table">
+          <thead class="table-header">
+            <tr>
+              <th class="table-cell">ID</th>
+              <th class="table-cell">User ID</th>
+              <th class="table-cell">Product Name</th>
+              <th class="table-cell">Quantity</th>
+              <th class="table-cell">Status</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            @for (item of last5Orders; track $index) {
+              <tr class="table-row">
+                <td class="table-cell">{{ item.id }}</td>
+                <td class="table-cell">{{ item.userId }}</td>
+                <td class="table-cell">{{ item.product }}</td>
+                <td class="table-cell">{{ item.quantity }}</td>
+                <td class="table-cell">{{ item.status }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Products Container -->
+      <div class="table-container">
+        <h3>Latest 5 Products</h3>
+        <table class="table">
+          <thead class="table-header">
+            <tr>
+              <th class="table-cell">ID</th>
+              <th class="table-cell">Item Name</th>
+              <th class="table-cell">Category</th>
+              <th class="table-cell">Price</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            @for (item of last5Produdcts; track $index) {
+                <tr class="table-row">
+                  <td class="table-cell">{{ item.id }}</td>
+                  <td class="table-cell">{{ item.name }}</td>
+                  <td class="table-cell">{{ item.category }}</td>
+                  <td class="table-cell">{{ item.price }}$</td>
+                </tr>
+              }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ion-button color="danger" (click)="logout()">Logout</ion-button>
+
+    <div class="h-20"></div>
+  </div>
+</ion-content>

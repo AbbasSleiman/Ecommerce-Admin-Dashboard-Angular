@@ -1,1 +1,40 @@
-<p>product works!</p>
+<app-navbar-dashboard />
+
+<ion-content class="w-full overflow-auto">
+    <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
+      <div class="text-center">
+        <h1>Products</h1>
+        <p>All Your Products Info</p>
+      </div>
+
+        <!-- Products Container -->
+        <div class="table-container">
+            <h3>Table of Products</h3>
+            <table class="table">
+              <thead class="table-header">
+                <tr>
+                  <th class="table-cell">ID</th>
+                  <th class="table-cell">Item Name</th>
+                  <th class="table-cell">Category</th>
+                  <th class="table-cell">Price</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                @for (item of productsArray; track $index) {
+                    <tr class="table-row">
+                      <td class="table-cell">{{ item.id }}</td>
+                      <td class="table-cell">{{ item.name }}</td>
+                      <td class="table-cell">{{ item.category }}</td>
+                      <td class="table-cell">{{ item.price }}$</td>
+                    </tr>
+                  }
+              </tbody>
+            </table>
+          </div>
+
+  
+      <ion-button (click)="navigate()" >Add New Product</ion-button>
+  
+      <div class="h-20"></div>
+    </div>
+  </ion-content>

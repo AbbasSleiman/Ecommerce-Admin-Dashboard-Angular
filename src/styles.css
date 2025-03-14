@@ -24,11 +24,37 @@
     }
   }
 
-  @layer components{
-
-
-  } 
-
+  @layer components {
+    /* Ion classes */
+    ion-card {
+      @apply flex flex-col gap-2 p-6;
+    }
+    ion-list{
+      @apply w-full
+    }
+  
+    /* Other classes */
+    .table-container {
+      @apply container w-full;
+    }
+  
+    .table {
+      @apply w-full bg-white rounded-lg shadow-lg overflow-hidden;
+    }
+  
+    .table-header {
+      @apply bg-gray-800 text-white;
+    }
+  
+    .table-row {
+      @apply border-b hover:bg-gray-50;
+    }
+  
+    .table-cell {
+      @apply py-3 px-4 text-left;
+    }
+  }
+  
   @layer utilities {
     .error_input{
       border-bottom: 1px solid red

@@ -1,24 +1,227 @@
 {
   "products": [
-    { "id": 1, "name": "Laptop", "price": 1200 },
-    { "id": 2, "name": "Phone", "price": 800 }
+    {
+      "id": "1",
+      "name": "Laptop",
+      "category": "electronics",
+      "price": 1200
+    },
+    {
+      "id": "2",
+      "name": "Phone",
+      "category": "electronics",
+      "price": 800
+    },
+    {
+      "id": "3",
+      "name": "Tablet",
+      "category": "electronics",
+      "price": 600
+    },
+    {
+      "id": "4",
+      "name": "Headphones",
+      "category": "electronics",
+      "price": 150
+    },
+    {
+      "id": "5",
+      "name": "Smartwatch",
+      "category": "electronics",
+      "price": 300
+    },
+    {
+      "id": "6",
+      "name": "Camera",
+      "category": "electronics",
+      "price": 1000
+    },
+    {
+      "id": "7",
+      "name": "TV",
+      "category": "electronics",
+      "price": 1500
+    },
+    {
+      "id": "8",
+      "name": "Refrigerator",
+      "category": "appliances",
+      "price": 2000
+    },
+    {
+      "id": "9",
+      "name": "Washing Machine",
+      "category": "appliances",
+      "price": 1800
+    },
+    {
+      "id": "10",
+      "name": "Microwave",
+      "category": "appliances",
+      "price": 400
+    },
+    {
+      "id": "11",
+      "name": "Blender",
+      "category": "appliances",
+      "price": 100
+    },
+    {
+      "id": "12",
+      "name": "Sofa",
+      "category": "furniture",
+      "price": 2500
+    },
+    {
+      "id": "13",
+      "name": "Chair",
+      "category": "furniture",
+      "price": 150
+    },
+    {
+      "id": "14",
+      "name": "Table",
+      "category": "furniture",
+      "price": 800
+    },
+    {
+      "id": "15",
+      "name": "Bed",
+      "category": "furniture",
+      "price": 3000
+    },
+    {
+      "id": 16,
+      "name": "test",
+      "category": "electronics",
+      "price": 33
+    }
   ],
   "orders": [
-    { "id": 1, "product": "Laptop", "quantity": 2 },
-    { "id": 2, "product": "Phone", "quantity": 1 }
+    {
+      "id": "1",
+      "userId": 1,
+      "product": "Laptop",
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "product": "Phone",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "3",
+      "userId": 3,
+      "product": "Tablet",
+      "quantity": 3,
+      "status": "pending"
+    },
+    {
+      "id": "4",
+      "userId": 4,
+      "product": "Headphones",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "5",
+      "userId": 5,
+      "product": "Smartwatch",
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": "6",
+      "userId": 6,
+      "product": "Camera",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "7",
+      "userId": 7,
+      "product": "TV",
+      "quantity": 1,
+      "status": "pending"
+    },
+    {
+      "id": "8",
+      "userId": 8,
+      "product": "Refrigerator",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "9",
+      "userId": 9,
+      "product": "Washing Machine",
+      "quantity": 1,
+      "status": "pending"
+    },
+    {
+      "id": "10",
+      "userId": 10,
+      "product": "Microwave",
+      "quantity": 2,
+      "status": "confirmed"
+    },
+    {
+      "id": "11",
+      "userId": 11,
+      "product": "Blender",
+      "quantity": 4,
+      "status": "pending"
+    },
+    {
+      "id": "12",
+      "userId": 12,
+      "product": "Sofa",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "13",
+      "userId": 13,
+      "product": "Chair",
+      "quantity": 6,
+      "status": "pending"
+    },
+    {
+      "id": "14",
+      "userId": 14,
+      "product": "Table",
+      "quantity": 1,
+      "status": "confirmed"
+    },
+    {
+      "id": "15",
+      "userId": 15,
+      "product": "Bed",
+      "quantity": 1,
+      "status": "pending"
+    }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Sirius",
       "password": "Password1234",
       "role": "admin"
     },
     {
-      "id": 2,
-      "username": "Guest",
+      "id": "2",
+      "username": "Ali",
       "password": "Password1234",
-      "role": "guest"
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "Mohamad",
+      "password": "Password1234",
+      "role": "user"
     }
   ]
 }
