@@ -1,1 +1,67 @@
-<p>order-add works!</p>
+<app-navbar-dashboard />
+
+<ion-content class="w-full overflow-auto">
+  <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
+    <div class="text-center">
+      <h1>Add an Order</h1>
+      <p>Add a new Order to your database</p>
+    </div>
+
+    <div
+      class="flex flex-col gap-2 items-center justify-between w-full md:w-2/5">
+      <form
+        [formGroup]="addOrderForm"
+        (ngSubmit)="submitAddOrder()"
+        class="flex flex-col gap-4 justify-center w-full">
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Item Name"
+            label-placement="floating"
+            fill="outline"
+            type="text"
+            formControlName="product"
+            placeholder="Enter Item Name"></ion-input>
+        </div>
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="User ID"
+            label-placement="floating"
+            fill="outline"
+            type="text"
+            formControlName="userId"
+            placeholder="Enter User Id"></ion-input>
+        </div>
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Item Quantity"
+            labelPlacement="floating"
+            fill="outline"
+            type="number"
+            formControlName="quantity"
+            placeholder="Enter Quantity ( 1 - 100 )">
+          </ion-input>
+        </div>
+        <ion-list>
+          <ion-item>
+            <ion-select
+              formControlName="status"
+              fill="outline"
+              aria-label="Status"
+              interface="popover"
+              placeholder="Select Status">
+              <ion-select-option value="pending">Pending</ion-select-option>
+              <ion-select-option value="confirmed"
+                >Confirmed
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" (click)="submitAddOrder()"
+          >Confirm</ion-button
+        >
+      </form>
+    </div>
+
+    <div class="h-20"></div>
+  </div>
+</ion-content>

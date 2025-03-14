@@ -1,1 +1,42 @@
-<p>order works!</p>
+<app-navbar-dashboard />
+
+<ion-content class="w-full overflow-auto">
+  <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
+    <div class="text-center">
+      <h1>Orders</h1>
+      <p>All Your Orders Info</p>
+    </div>
+
+    <!-- Orders Container -->
+    <div class="table-container">
+      <h3>Table of Orders</h3>
+      <table class="table">
+        <thead class="table-header">
+          <tr>
+            <th class="table-cell">ID</th>
+            <th class="table-cell">User ID</th>
+            <th class="table-cell">Item Name</th>
+            <th class="table-cell">Quantity</th>
+            <th class="table-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          @for (item of ordersArray; track $index) {
+            <tr class="table-row">
+              <td class="table-cell">{{ item.id }}</td>
+              <td class="table-cell">{{ item.userId }}</td>
+              <td class="table-cell">{{ item.product }}</td>
+              <td class="table-cell">{{ item.quantity }}</td>
+              <td class="table-cell">{{ item.status }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- this is not how it works, but for simplicity Orders will be added by admin -->
+    <ion-button (click)="navigate()">Add New Order</ion-button>
+
+    <div class="h-20"></div>
+  </div>
+</ion-content>

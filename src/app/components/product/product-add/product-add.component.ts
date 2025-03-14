@@ -19,7 +19,6 @@ import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { Product } from '../../../models/Product';
 import { ServicesService } from '../../dashboard/services.service';
-import { response } from 'express';
 
 @Component({
   selector: 'app-product-add',
@@ -57,20 +56,21 @@ export class ProductAddComponent {
     private dashboardService: ServicesService
   ) {}
 
-  // Submit function
-  submitAddProduct() {
+  ngOnInit(): void {
     this.dashboardService.getCategoryNumber('products').subscribe(response => {
       this.itemNumbers = response;
     });
-    console.log(this.itemNumbers);
+  }
 
-    const product: Product = {
-      id: (this.itemNumbers++),
-      name: this.addProductForm.value.name!,
-      category: this.addProductForm.value.category!,
-      price: this.addProductForm.value.price!,
-    };
+  // Submit function
+  submitAddProduct() {
     if (this.addProductForm.valid) {
+      const product: Product = {
+        id: this.itemNumbers++,
+        name: this.addProductForm.value.name!,
+        category: this.addProductForm.value.category!,
+        price: this.addProductForm.value.price!,
+      };
       this.productService.addProduct(product).subscribe();
     }
   }
