@@ -15,10 +15,10 @@ export class NavbarComponent {
 
   // On Initialize, assign http Response to isAdmin
   ngOnInit(): void {
-    this.getIsUserAdmin(1);
+    this.getIsUserAdmin(this.authService.getUserId());
   }
 
-  getIsUserAdmin(id: number) {
+  getIsUserAdmin(id: number | null) {
     this.authService.isUserAdmin(id).subscribe(response => {
       this.isAdmin = response;
     });

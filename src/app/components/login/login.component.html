@@ -1,1 +1,68 @@
-<p>login works!</p>
+<div class="outer-container">
+  <div class="flex flex-col items-center justify-center w-96 h-screen">
+    <ion-content>
+      <div>
+        <h1>Login</h1>
+        <p>Please Input Your Credentials</p>
+      </div>
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="handleSubmit()"
+        class="flex flex-col gap-4 justify-center w-full">
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Username"
+            label-placement="floating"
+            fill="outline"
+            type="text"
+            formControlName="username"
+            placeholder="Username"></ion-input>
+          @if (loginForm.get('username')?.dirty) {
+            <div>
+              <small>
+                @if (loginForm.get('username')?.hasError('required')) {
+                  Please make sure username is not empty
+                }
+              </small>
+              <small>
+                @if (loginForm.get('username')?.hasError('minLength')) {
+                  Please make sure username is at least 5 characters
+                }
+              </small>
+              <small>
+                @if (loginForm.get('username')?.hasError('pattern')) {
+                  Please make sure username contains only letters
+                }
+              </small>
+            </div>
+          }
+        </div>
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Password"
+            labelPlacement="floating"
+            fill="outline"
+            type="password"
+            formControlName="password"
+            placeholder="Password">
+          </ion-input>
+        </div>
+        @if (loginForm.get('password')?.dirty) {
+          <div>
+            <small>
+              @if (loginForm.get('password')?.hasError('required')) {
+                Please make sure password is not empty
+              }
+            </small>
+          </div>
+        }
+        <ion-button expand="block" (click)="handleSubmit()" >Login</ion-button>
+      </form>
+    </ion-content>
+  </div>
+</div>
+
+<!-- [class.error_input]="
+  loginForm.get('username')?.invalid &&
+  loginForm.get('username')?.dirty" -->

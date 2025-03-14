@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
+  small{
+    color: red;
+  }
     input[type="text"],
     input[type="email"] , 
     input[type="password"]{
@@ -28,6 +31,6 @@
 
   @layer utilities {
     .error_input{
-      border: 1px solid red
+      border-bottom: 1px solid red
     }
   }

@@ -12,7 +12,8 @@ export const authenticateGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthenticateService);
   const router: Router = inject(Router);
 
-  const isAdmin$: Observable<boolean> = authService.isUserAdmin(1);
+  // const isAuthenticated$: Observable<boolean> = null;
+  const isAdmin$: Observable<boolean> = authService.isUserAdmin(authService.getUserId());
 
   isAdmin$.subscribe(response => {
     isAdmin = response;
