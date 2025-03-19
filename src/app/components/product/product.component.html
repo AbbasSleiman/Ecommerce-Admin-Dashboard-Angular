@@ -1,40 +1,120 @@
 <app-navbar-dashboard />
 
 <ion-content class="w-full overflow-auto">
+  <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
+    <div class="text-center">
+      <h1>Products</h1>
+      <p>All Your Products Info</p>
+    </div>
+
+    <!-- Products Container -->
+    <div class="table-container">
+      <h3>Table of Products</h3>
+      <table class="table">
+        <thead class="table-header">
+          <tr>
+            <th class="table-cell">ID</th>
+            <th class="table-cell">Item Name</th>
+            <th class="table-cell">Category</th>
+            <th class="table-cell">Price</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          @for (item of productsArray; track $index) {
+            <tr class="table-row">
+              <td class="table-cell">{{ item.id }}</td>
+              <td class="table-cell">{{ item.name }}</td>
+              <td class="table-cell">{{ item.category }}</td>
+              <td class="table-cell">{{ item.price }}$</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <ion-button (click)="navigate()">Add New Product</ion-button>
+
+    <!-- Update Container -->
     <div class="flex flex-col items-center justify-center p-4 m-2 gap-6">
       <div class="text-center">
-        <h1>Products</h1>
-        <p>All Your Products Info</p>
+        <h1>Update Product</h1>
+        <p>Search for a Product and Update it</p>
       </div>
 
-        <!-- Products Container -->
-        <div class="table-container">
-            <h3>Table of Products</h3>
-            <table class="table">
-              <thead class="table-header">
-                <tr>
-                  <th class="table-cell">ID</th>
-                  <th class="table-cell">Item Name</th>
-                  <th class="table-cell">Category</th>
-                  <th class="table-cell">Price</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-700">
-                @for (item of productsArray; track $index) {
-                    <tr class="table-row">
-                      <td class="table-cell">{{ item.id }}</td>
-                      <td class="table-cell">{{ item.name }}</td>
-                      <td class="table-cell">{{ item.category }}</td>
-                      <td class="table-cell">{{ item.price }}$</td>
-                    </tr>
-                  }
-              </tbody>
-            </table>
-          </div>
+      <form
+        [formGroup]="searchProductForm"
+        (ngSubmit)="submitSearch()"
+        class="flex flex-col gap-4 justify-center items-center w-full">
+        <h4>Search for Item by Name</h4>
+        <div class="flex flex-col gap-4">
+          <ion-input
+            label="Search Item Name"
+            label-placement="floating"
+            fill="outline"
+            type="text"
+            formControlName="item_name"
+            placeholder="Enter Item Name"></ion-input>
+          <ion-button expand="block" (click)="submitSearch()"
+            >Search</ion-button
+          >
+        </div>
+      </form>
 
-  
-      <ion-button (click)="navigate()" >Add New Product</ion-button>
-  
-      <div class="h-20"></div>
+      <form
+        [formGroup]="editProductForm"
+        (ngSubmit)="(null)"
+        class="flex flex-col gap-4 justify-center items-center w-full">
+        <h4>Item Details</h4>
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Item Name"
+            label-placement="floating"
+            fill="outline"
+            type="text"
+            formControlName="name"
+            placeholder="Enter Item Name"></ion-input>
+        </div>
+        <div class="flex flex-col items-start">
+          <ion-input
+            label="Item Price"
+            labelPlacement="floating"
+            fill="outline"
+            type="number"
+            formControlName="price"
+            min="0"
+            placeholder="Enter Price ( 0 - 10,000 )">
+          </ion-input>
+        </div>
+        <ion-list>
+          <ion-item>
+            <ion-select
+              formControlName="category"
+              fill="outline"
+              aria-label="Category"
+              interface="popover"
+              placeholder="Select Category">
+              <ion-select-option value="electronics"
+                >Electronics</ion-select-option
+              >
+              <ion-select-option value="appliances"
+                >Appliances</ion-select-option
+              >
+              <ion-select-option value="furniture"
+                >Furnitures
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <div class="flex flex-row gap-2">
+          <ion-button expand="block" (click)="(null)">Update</ion-button>
+          <ion-button color="danger" expand="block" (click)="(null)"
+            >Delete</ion-button
+          >
+        </div>
+      </form>
     </div>
-  </ion-content>
+
+    <div class="h-20"></div>
+  </div>
+</ion-content>

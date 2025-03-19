@@ -74,4 +74,7 @@ export class ProductAddComponent {
       this.productService.addProduct(product).subscribe();
     }
   }
+
+
+
 }

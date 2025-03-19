@@ -91,10 +91,16 @@
       "price": 3000
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "test",
       "category": "electronics",
       "price": 33
+    },
+    {
+      "id": 16,
+      "name": "Test",
+      "category": "furniture",
+      "price": 100
     }
   ],
   "orders": [
@@ -201,6 +207,13 @@
       "userId": 15,
       "product": "Bed",
       "quantity": 1,
+      "status": "pending"
+    },
+    {
+      "id": 15,
+      "userId": "1",
+      "product": "Test",
+      "quantity": 2,
       "status": "pending"
     }
   ],
