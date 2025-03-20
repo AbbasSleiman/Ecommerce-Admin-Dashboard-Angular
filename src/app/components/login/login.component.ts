@@ -7,11 +7,11 @@ import {
 } from '@angular/forms';
 import { IonButton, IonContent, IonInput } from '@ionic/angular/standalone';
 import { AuthenticateService } from '../../guards/authenticate.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, IonButton, IonInput, IonContent],
+  imports: [ReactiveFormsModule, IonButton, IonInput, IonContent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

@@ -1,5 +1,5 @@
 <div class="outer-container">
-  <div class="flex flex-col items-center justify-center w-96 h-screen">
+  <div class="flex flex-col items-center justify-center w-96 h-screen m-auto">
     <ion-content>
       <div>
         <h1>Login</h1>
@@ -57,8 +57,24 @@
             </small>
           </div>
         }
-        <ion-button expand="block" (click)="handleSubmit()" >Login</ion-button>
+        <ion-button
+          expand="block"
+          (click)="handleSubmit()"
+          [disabled]="!loginForm.valid"
+          >Login</ion-button
+        >
       </form>
+      <p class="text-center pt-4">
+        <span
+          >New Here?
+          <a
+            routerLink="/signup"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Signup</a
+          ></span
+        >
+      </p>
     </ion-content>
   </div>
 </div>

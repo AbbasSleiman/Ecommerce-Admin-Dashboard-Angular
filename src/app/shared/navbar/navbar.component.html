@@ -1,6 +1,6 @@
 <nav>
   <ul
-    class="flex flex-row items-center justify-start gap-4 p-4 w-full bg-white border-1 border-b-gray-500">
+    class="flex flex-row items-center justify-between gap-4 p-4 w-full bg-white border-1 border-b-gray-500">
     <li>
       <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page"
         >Home</a
@@ -16,5 +16,35 @@
         >
       </li>
     }
+    <div class="flex flex-row gap-4 items-center">
+      @if (isAuthenticated) {
+        <li>
+          <a
+            routerLink="/profile"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Profile</a
+          >
+        </li>
+      } @else {
+        <li>
+          <a
+            routerLink="/login"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Login</a
+          >
+        </li>
+        <span>Or</span>
+        <li>
+          <a
+            routerLink="/signup"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Signup</a
+          >
+        </li>
+      }
+    </div>
   </ul>
 </nav>

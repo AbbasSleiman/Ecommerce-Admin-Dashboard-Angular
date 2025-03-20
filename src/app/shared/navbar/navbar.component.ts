@@ -10,6 +10,7 @@ import { AuthenticateService } from '../../guards/authenticate.service';
 })
 export class NavbarComponent {
   isAdmin: boolean | undefined;
+  isAuthenticated: boolean | undefined;
 
   constructor(private authService: AuthenticateService) {}
 
